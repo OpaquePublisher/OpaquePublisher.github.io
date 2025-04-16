@@ -1,0 +1,21 @@
+# Site navigation links
+
+- title: Home
+  url: /
+  excerpt:
+  image:
+
+- title: About DigitalArc
+  url: /about/
+  excerpt:
+  image:
+
+- title: Using DigitalArc
+  url: /documentation/
+  excerpt:
+  image:
+
+- title: Example Site
+  url: /demo
+  excerpt:
+  image:
