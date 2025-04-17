@@ -1,0 +1,76 @@
+<!-- DEV NOTES:
+This multi-filtering system currently uses the 'format' field for the type of object and the 'categories' field to make content-based tag filtering possible.
+Change which property is accessed & used in the filters in lines 14-25 & 28-39. -->
+
+<!-- DEFINE CATLIST -->
+{% assign allCats = "" | split: ',' %}
+{% assign allFormats = "" | split: ',' %}
+
+<!--BEGIN ITEM ASSIGNMENT LOOP-->
+{% for item in site.items %}
+
+<!-- BUILDING CATEGORY LIST-->
+{% if item.categories %}
+{% for cat in item.categories %}
+<!-- CHECK FOR STRING OR NUMBER TO ASSIST IN CAPTURING UNIQUE VALUES-->
+{% capture testValue %}{{ cat | json }}{% endcapture %}
+{% if testValue contains '"' %}
+{% assign catvar = cat %}
+{% else %}
+{% capture catvar %}{{ cat }}{% endcapture %}
+{% endif %}
+{% assign allCats = allCats | push: catvar %}
+{% endfor %}
+{% endif %}
+
+<!-- BUILDING TYPE LIST-->
+{% if item.format %}
+{% for format in item.format %}
+<!-- CHECK FOR STRING OR NUMBER TO ASSIST IN CAPTURING UNIQUE VALUES-->
+{% capture testValue %}{{ format | json }}{% endcapture %}
+{% if testValue contains '"' %}
+{% assign formatvar = format %}
+{% else %}
+{% capture formatvar %}{{ format }}{% endcapture %}
+{% endif %}
+{% assign allFormats = allFormats | push: formatvar %}
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+<!-- END ITEM ASSIGNMENT LOOP-->
+
+<!-- MAKE filter lists UNIQUE -->
+{% assign uniqueCategories = allCats | uniq %}
+{% assign uniqueCategories = uniqueCategories | sort %}
+
+{% assign uniqueFormats = allFormats | uniq %}
+{% assign uniqueFormats = uniqueFormats | sort %}
+
+<div class="grid-container" style="margin-bottom:.5rem;">
+	<div class="grid-x grid-padding-x grid-margin-x">
+		<div class="cell {% if uniqueFormats.size > 1 %}large-8{% endif %} buttons-container">
+			{% for category in uniqueCategories %}
+			<button class="filter-button" data-category="{{ category }}">{{ category }}</button>
+			{% endfor %}
+		</div>
+	{% if uniqueFormats.size > 1 %}
+	   <!-- Checkbox List (Right) -->
+		<div class="cell large-4" id="filter-checkboxes" role="group" aria-label="item format checkboxes">
+			{% for format in uniqueFormats %}
+			<div class="checkbox-wrapper">
+				<input type="checkbox" data-format="{{ format }}" id="checkbox-{{ forloop.index }}"><label for="checkbox-{{ forloop.index }}">{{ format }}</label>
+			</div>
+			{% endfor %}
+		</div>
+	{% endif %}
+	</div>
+</div>
+
+<div class="grid-container">
+	<div class="grid-x grid-padding-x grid-margin-x">
+    {% for item in site.items %}
+    {% include _itembox.html %}
+    {% endfor %}
+	</div>
+</div>

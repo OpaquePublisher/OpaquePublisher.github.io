@@ -1,21 +1,16 @@
 # Site navigation links
 
-- title: Home
+- title: About OOPP
   url: /
   excerpt:
   image:
 
-- title: About DigitalArc
-  url: /about/
-  excerpt:
-  image:
-
-- title: Using DigitalArc
+- title: Using OOPP
   url: /documentation/
   excerpt:
   image:
 
-- title: Example Site
-  url: /demo
+- title: Example Publication
+  url: https://tuberculosisspecimen.github.io/diss/dissertation
   excerpt:
   image:

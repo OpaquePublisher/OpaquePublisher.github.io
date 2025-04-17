@@ -3,7 +3,6 @@
 #---------------------
 # THEME. The following 3 lines don't need to change
 #---------------------
-remote_theme: kalanicraig/digitalarcplatform@v0.9.0-beta.1
 repository: 'OpaquePublisher/OpaquePublisher.github.io' # change this to your repository name
 
 
@@ -111,6 +110,19 @@ fontchoice: roboto # A clean sans-serif font with simple serif accents
 #colorchoice: teal # Bright teal with bright orange-yellow accents
 colorchoice: custom
 
+# If you chose white with an accent color, choose the ACCENT you'd like to use.
+# You can see these color choices in action at https://digitalarcplatform.kalanicraig.com/docs/
+# Uncomment the line for the color you like. Comment out all of the other lines.
+
+accentchoice: accent-darkred # Dark red
+#accentchoice: accent-blue # Medium blue
+#accentchoice: accent-green # Kelly green
+#accentchoice: accent-purple # Grape purple
+#accentchoice: accent-pink # Deep pink
+#accentchoice: accent-orange # Tangerine Orange
+#accentchoice: accent-bluegrey # Blue Grey
+
+
 ##############################################
 # ORGANIZING YOUR COLLECTION
 #---------------------
@@ -122,6 +134,11 @@ collections:
     contributor: true
     creator: true
     group: true
+  dissertation:
+    output: true
+    permalink: /:collection/:path:output_ext
+    chapter: true
+    identifier: true
   authors:
     output: false
     name: true
