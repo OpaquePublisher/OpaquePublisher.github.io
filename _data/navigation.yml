@@ -1,16 +1,16 @@
 # Site navigation links
 
-- title: About OOPP
+- title: About The OOPP Theme
   url: /
   excerpt:
   image:
 
-- title: Using OOPP
-  url: /documentation/
+- title: Using the OOPP
+  url: https://opaquepublisher.github.io/documentation/
   excerpt:
   image:
 
-- title: Example Publication
-  url: https://tuberculosisspecimen.github.io/diss/dissertation
+- title: Example Site
+  url: https://tuberculosisspecimen.github.io/diss/dissertation/tableofcontents
   excerpt:
   image:

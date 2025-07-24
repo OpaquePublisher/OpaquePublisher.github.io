@@ -1,13 +1,11 @@
 ##############################################
-# START YOUR CONFIGURATION HERE! For more info, visit https://digitalarcplatform.github.io/documentation/quickstart
+# START YOUR CONFIGURATION HERE! For more info, visit https://digitalarcplatform.github.io/documentation/docs/publishSite/
+# THEME.
 #---------------------
-# THEME. The following 3 lines don't need to change
-#---------------------
-repository: 'OpaquePublisher/OpaquePublisher.github.io' # change this to your repository name
-
+#remote-theme: digitalarcplatform
 
 ##############################################
-# WHAT IS ALL THIS STUFF?
+# WHAT IS ALL THIS STUFF? SOME VOCABULARY.
 #---------------------
 # _config is easy. Most web sites have configuration files.
 # .yml means YAML. It's the data that runs your site.
@@ -45,10 +43,10 @@ repository: 'OpaquePublisher/OpaquePublisher.github.io' # change this to your re
 title: "Opaque Online Publishing Platform"
 
 # Subtitle of your website. Leave blank if you want to.
-subtitle: "A digital publishing platform with sensitive-image support"
+subtitle: "A digital publishing platform with sensitive-image and -text support"
 
 # A longer description of your site (max 150 words). Helps search engines find you.
-description: "A digital publishing platform with sensitive-image support"
+description: "This publishing platform provides support for digital publications that have sensitive-image content for which audience-selected redaction is valuable. From dissertations and monographs to novels and other long-form genres, the OOPP provides a built-in option to show and hide fully- or partially-redacted images, with all the support of automated tables of contents, footnotes, and a static-site format that makes maintaining and preserving an online publication easier."
 
 # These credits show up in the includes/_footer.html
 # Main author of the website.
@@ -62,7 +60,7 @@ sitedate : 2025
 
 # Other community social media. Leave blank if you don't have these.
 email : ""
-website : 
+website : ""
 twitter : 
 github : 
 facebook : 
@@ -78,7 +76,7 @@ instagram :
 
 # If you need to know how many people visit your site, go to https://analytics.google.com/
 # When you finish the setup assistant, it will give you a Measurement ID: G-ABCDEFGHIJ
-#google_g4_analytics_id: G-LVREG1Y1DT
+google_g4_analytics_id: 
 
 ##############################################
 # FONTS AND COLORS
@@ -92,9 +90,9 @@ instagram :
 #fontchoice: baloo # A clean sans-serif font with a playful rounded sans-serif accent
 #fontchoice: quattrocento # A modern sans-serif font with classic serif accents
 #fontchoice: raleway # An elegant sans-serif font with bold sans-serif accents
-fontchoice: roboto # A clean sans-serif font with simple serif accents
+#fontchoice: roboto # A clean sans-serif font with simple serif accents
 #fontchoice: slab # A funky slab font with clean sans-serif accents
-#fontchoice: source # A modern serif font with clean sans-serif accents
+fontchoice: source # A modern serif font with clean sans-serif accents
 
 # Choose the COLORS you'd like to use.
 # You can see these color choices in action at https://digitalarcplatform.kalanicraig.com/docs/
@@ -108,37 +106,41 @@ fontchoice: roboto # A clean sans-serif font with simple serif accents
 #colorchoice: red # Black, crimson and grey
 #colorchoice: tan # Tan and deep brown with flame-bright orange
 #colorchoice: teal # Bright teal with bright orange-yellow accents
-colorchoice: custom
+colorchoice: whitewithaccent # White with black text and the accent of your choice from the colors below
+#colorchoice: custom
 
 # If you chose white with an accent color, choose the ACCENT you'd like to use.
 # You can see these color choices in action at https://digitalarcplatform.kalanicraig.com/docs/
 # Uncomment the line for the color you like. Comment out all of the other lines.
 
-accentchoice: accent-darkred # Dark red
-#accentchoice: accent-blue # Medium blue
-#accentchoice: accent-green # Kelly green
-#accentchoice: accent-purple # Grape purple
+#accentchoice: accent-darkred # Dark red
+#accentchoice: accent-red # Bright red
 #accentchoice: accent-pink # Deep pink
 #accentchoice: accent-orange # Tangerine Orange
+#accentchoice: accent-brown # Warm brown
+accentchoice: accent-green # Kelly green
+#accentchoice: accent-navy # Navy blue
+#accentchoice: accent-blue # Medium blue
 #accentchoice: accent-bluegrey # Blue Grey
-
+#accentchoice: accent-purple # Grape purple
+#accentchoice: accent-grey # Mid Grey
 
 ##############################################
 # ORGANIZING YOUR COLLECTION
 #---------------------
 # These collections take the basic files you put together for each item in your collection and display them with filtering buttons based on the tags, formats, and categories you include in each item file.
 collections:
+  dissertation:
+    output: true
+    permalink: /:collection/:path:output_ext
+    chapter: true
+    identifier: true
   items:
     output: true
     permalink: /:collection/:path:output_ext
     contributor: true
     creator: true
     group: true
-  dissertation:
-    output: true
-    permalink: /:collection/:path:output_ext
-    chapter: true
-    identifier: true
   authors:
     output: false
     name: true
@@ -152,8 +154,8 @@ collections:
 
 # This URL is the main address for absolute links. This will usually be blank.
 url: 
-# This will usually be blank. If this archive will be in a folder (kalanicraig.com/digitalarcplatform/) instead of in its own main site (idahatiu.github.io) add that folder name here with a slash / in front of it (e.g. /communityarchive).
-baseurl: ""
+# This will usually be blank. If this archive will be in a folder (https://tuberculosisspecimen.github.io/dissertation/) instead of in its own main site (https://tuberculosisspecimen.github.io/) add that folder name here with a slash / in front of it (e.g. baseurl: /dissertation).
+baseurl: 
 
 # This URL points directly to the images directory. It needs a slash at the end.
 #
@@ -184,4 +186,3 @@ sass:
 
 plugins:
   - jekyll-seo-tag
-

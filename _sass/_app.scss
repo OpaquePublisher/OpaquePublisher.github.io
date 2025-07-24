@@ -1,3 +1,35 @@
+$dark-top-bar: VALUE !default;
+
+/** =================================
+Dark/light BG settings
+================================= **/
+
+	@mixin nav-bar-colors($dark-top-bar) {
+	  @if $dark-top-bar == true {
+		background-color: $dark-bg;
+		color: $dark-text-color;
+	  } @else {
+		background-color: $main-bg;
+		color: $main-text-color;
+	  }
+	}
+	
+	@mixin nav-bar-link($dark-top-bar) {
+	  @if $dark-top-bar == true {
+		color: $dark-link;
+	  } @else {
+		color: $main-link;
+	  }
+	}
+	
+	@mixin nav-bar-hover($dark-top-bar) {
+	  @if $dark-top-bar == true {
+		color: $dark-link-hover;
+	  } @else {
+		color: $main-link-hover;
+	  }
+	}
+
 /** =================================
 Base settings
 ================================= **/
@@ -34,16 +66,15 @@ Base settings
 	}
 
 	.darkbg{
-	  background-color: $dark-bg;
-	  color: $dark-text-color;
+	  @include nav-bar-colors($dark-top-bar)
 	}
 
 	.darkbg a {
-		color: $dark-link;
+	  @include nav-bar-link($dark-top-bar)
 	}
 
 	.darkbg a:hover, .accentbg a:focus {
-		color: $dark-link-hover;
+	  @include nav-bar-hover($dark-top-bar)
 	}
 
 	.accentbg {
@@ -62,6 +93,41 @@ Base settings
 	.menu-hover-lines a:before {
 	  background-color: $dark-headers;
 	}
+
+	
+/** == Divider and Tooltip styling **/
+
+	.style-divider {
+		display: flex;
+		justify-content: center;
+		padding: 3rem;
+
+		.line {
+			width: 75%;
+			border-bottom: 2px solid $main-link-hover;
+		}
+	}
+
+	/* Custom Tooltip Styling  */
+	span[data-title]:hover::after {
+	  @include nav-bar-colors($dark-top-bar)
+	}
+
+	/* Custom Tooltip Styling  */
+	span[data-title]:hover::after {
+		display: block;
+		content: attr(data-title);
+		position: absolute;
+		left: -250%;
+		z-index: 100;
+		width: 30rem;
+		font-size: 1rem;
+		padding: .5rem;
+		border: 1px solid $main-link-hover;
+		box-shadow: 1px 1px 4px #242424;
+		border-radius: 6px;
+	}
+
 	
 /** == Header styling **/
 	
@@ -94,6 +160,7 @@ Base settings
 	}
 
 	.subheadline.siteheader {
+		color: $dark-text-color;
 		padding-bottom: .5em;
 	}
 
@@ -188,33 +255,7 @@ Nav and Menu Elements
 		text-transform: uppercase;
 	}
 
-	@mixin nav-bar-colors($dark-top-bar) {
-	  @if $dark-top-bar == true {
-		background-color: $dark-bg;
-		color: $dark-text-color;
-	  } @else {
-		background-color: $main-bg;
-		color: $main-text-color;
-	  }
-	}
-	
-	@mixin nav-bar-link($dark-top-bar) {
-	  @if $dark-top-bar == true {
-		color: $dark-link;
-	  } @else {
-		color: $main-link;
-	  }
-	}
-	
-	@mixin nav-bar-hover($dark-top-bar) {
-	  @if $dark-top-bar == true {
-		color: $dark-link-hover;
-	  } @else {
-		color: $main-link-hover;
-	  }
-	}
-		
-	.pagetitle, .top-bar, .top-bar ul,  .top-bar ul {
+	.pagetitle, .top-bar, .top-bar ul, .top-bar ul {
 	  @include nav-bar-colors($dark-top-bar)
 	}
 	
@@ -425,94 +466,6 @@ Typographic & Design Elements
 		padding: .5rem 0 .5rem 0;
 	}
 
-/** == Image and Caption Styling **/
-
-	@media screen and (min-width: 63em) {
-		.article-image {
-			width: 33%;
-		}
-	}
-	@media screen and (max-width: 62.9775em) {
-		.article-image {
-			width: 50%;
-		}
-	}
-	@media screen and (max-width: 39.9775em) {
-		.article-image {
-			width: 100%;
-		}
-	}
-
-	.square {
-		object-fit: cover;
-	}
-
-	@media screen and (min-width: 63em) {
-		.square {
-			width: 100%;
-			height: 337px;
-		}
-	}
-	@media screen and (max-width: 62.9775em) {
-		.square {
-			height: 337px;
-		}
-	}
-	@media screen and (max-width: 39.9775em) {
-		.square {
-			width: 100%;
-			height: 30em;
-		}
-	}
-
-	@media screen and (max-width: 39.9375em) {
-	  .half-width-image {
-		width:100%;
-	  }
-	}
-	
-	@media screen and (min-width: 40em) {
-	  .half-width-image {
-		width:50%;
-		clear: all;
-		float: right;
-	  }
-	}
-	
-	.card-section {
-		font-size:85%;
-	}
-	
-	@media screen and (max-width: 39.9375em) {
-	  .quarter-width-image {
-		width:100%;
-	  }
-	}
-	
-	@media screen and (min-width: 40em) {
-	  .no-wrap {
-		clear: all;
-	  }
-	}
-	
-	.card-section {
-		font-size:85%;
-	}
-	
-	@media screen and (max-width: 39.9375em) {
-	  .quarter-width-image {
-		width:100%;
-	  }
-	}
-	
-	@media screen and (min-width: 40em) {
-	  .quarter-width-image {
-		width:25%;
-		clear: all;
-		float: right;
-	  }
-	}
-	
 /** == Stacked Table **/
 
 	tbody tr:nth-child(even) {
@@ -777,10 +730,32 @@ BLOG POST LISTINGS
 }
 
 /** =================================
-Filter Buttons
+Filter Buttons and other Buttons
 ================================= **/
 
-    /* Style the filter buttons */
+/* Style regular buttons */
+   .button {
+		border: 2px solid $dark-bg;
+        border-radius: 5px;
+		background-color: $dark-bg;
+		color: $dark-text-color;
+        transition: background-color 0.3s ease;
+        align-items: center; /* Center button text vertically */
+    }
+
+    .button:hover {
+		border-color: $dark-link-hover;
+		background-color: $main-bg;
+		color: $main-text-color;
+   }
+
+    .button.active {
+        background-color: lighten($dark-link, 15%);
+		color: $dark-text-color;
+    }
+
+
+/* Style the filter buttons */
     .buttons-container {
         display: flex;
         flex-wrap: wrap;
@@ -800,12 +775,11 @@ Filter Buttons
     }
 
     .filter-button:hover {
-		border-color: $main-link-hover;
+		border-color: $dark-link-hover;
     }
 
     .filter-button.active {
-        background-color: $dark-link;
-        color: $dark-text-color;
+        background-color: lighten($dark-link, 15%);
     }
 
 /* Checkbox style */
@@ -842,17 +816,19 @@ Filter Buttons
         z-index: -1;
     }
 
+    .checkbox-wrapper input[type=checkbox]:hover + label:hover {
+       color: $main-headers;
+    }
+
     .checkbox-wrapper input[type=checkbox]:checked + label {
         padding-left: 1em;
-        color: $dark-link;
     }
 
     .checkbox-wrapper input[type=checkbox]:checked + label:before {
         top: 0;
         width: 100%;
         height: 2em;
-        background-color: $main-link;
-        color: $main-bg;
+        background-color: lighten($dark-link, 15%);
     }
 
     .checkbox-wrapper label,

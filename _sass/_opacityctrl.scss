@@ -1,0 +1,40 @@
+/** =================================
+Opacity Control for Redaction Purposes
+================================= **/
+
+.opaque-lines {
+	opacity: 1; /* Set initial opacity for partial view */
+}
+
+.toggle-button {
+	padding: 8px 12px;
+	margin:5px;
+	cursor: pointer;
+	width:80%;
+	border: 2px solid $dark-bg;
+	border-radius: 5px;
+	background-color: $dark-bg;
+	color: $dark-text-color;
+	transition: background-color 0.3s ease;
+	align-items: center; /* Center button text vertically */
+}
+
+.toggle-button:hover {
+	border-color: $dark-link-hover;
+	background-color: $main-bg;
+	color: $main-text-color;
+	cursor: pointer;
+}
+
+.selected {
+	background-color: lighten($dark-link, 15%);
+	color: $dark-text-color;
+}
+
+.section-toc {
+ 	position: fixed;
+	height: 58%;
+	width: 280px !important;
+ 	overflow-y: auto;
+ 	overflow-x: hidden;
+ }

@@ -5,26 +5,26 @@ format: section
 <div class="darkbg" style="margin-top:-10px;">
 <div class="grid-container">
 <h4 class="center">{{ page.subheadline }}</h4>
-<h1 class="sans center">{% if page.chapter %}{{ page.chapter }}.{{ page.section }}.{{ page.subsection }}: {% endif %}{{ page.title }}</h1>
+<h1 class="sans center">{% if page.chapter %}{% if page.chapter != "misc" %}{{ page.chapter }}.{{ page.section }}.{{ page.subsection }}: {% endif %}{% endif %}{{ page.title }}</h1>
 </div>
 </div>
 
-
-<div class="grid-container">
+<div class="grid-container sidescroll">
 	<div class="grid-x grid-padding-x">
 		<div class="large-2 columns show-for-landscape section-toc">
-			<button id="transparentBtn" class="toggle-button accentbg">Transparent</button>
-			<button id="partiallyOpaqueBtn" class="toggle-button accentbg selected">Partially Opaque</button>
-			<button id="opaqueBtn" class="toggle-button accentbg">Opaque</button>
-				<h2>Chapter {{page.chapter}}</h2>
-				{% assign listofsections = site.dissertation | where: 'chapter', page.chapter | sort: "section" %}
-				{% for section in listofsections %}
+			<button id="transparentBtn" class="toggle-button">Transparent</button>
+			<button id="partiallyOpaqueBtn" class="toggle-button selected">Partially Opaque</button>
+			<button id="opaqueBtn" class="toggle-button">Opaque</button>
+				<h2>{{page.chaptertitle}}</h2>
 				{% include _sectionlist.html %}
-				{% endfor %}
 		</div>
 		<div class="large-9 large-offset-3 columns">
+		
+{% include _navigation.html %}<br>
 
 {{ content }}
+
+<br>{% include _navigation.html %}
 
 </div>
 
