@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "OOPP"
+  spec.name          = "OpaqueOnlinePublishingPlatform"
   spec.version       = "0.1.0"
   spec.authors       = ["The OOPP Team"]
   spec.email         = ["opaquepublisher@gmail.com"]
