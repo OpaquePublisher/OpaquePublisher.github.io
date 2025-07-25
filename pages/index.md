@@ -14,9 +14,10 @@ To use the theme, make a copy of our template:
 1. Visit the template page
 1. Find the green "Use this template" button in the upper left-hand corner
 1. Choose the "Create a repository" option
-1. View our [quick start guide](https://opaquepublisher.github.io/documentation/quickstart/)
+1. Use our [Config File Generator](https://opaquepublisher.github.io/MakeConfigFile/) to generate a configuration file.
+1. View our [quick start guide](https://opaquepublisher.github.io/documentation/)
 
-[View the template](https://github.com/OpaquePublisher/template){: .button}
+[Copy our template](https://github.com/OpaquePublisher/template){: .button}
 
 ### Principal Project Team:
 
