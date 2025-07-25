@@ -130,7 +130,7 @@ accentchoice: accent-green # Kelly green
 #---------------------
 # These collections take the basic files you put together for each item in your collection and display them with filtering buttons based on the tags, formats, and categories you include in each item file.
 collections:
-  dissertation:
+  narrative:
     output: true
     permalink: /:collection/:path:output_ext
     chapter: true

@@ -13,18 +13,18 @@ format: chapterhead
 
 <h1>{{ page.sectiontitle }}</h1>
 {{ page.info }}
-{% for dissloop in site.dissertation %}
-{% if dissloop.chapter == page.chapter %}
-{% if dissloop.subsection == "0" %}
-{% if dissloop.section != "0" %}
-<h4>Section: {{ dissloop.section}}: {{ dissloop.sectiontitle }}</h4>
-{% if dissloop.info != "nil" %}{{ dissloop.info }}<br><br>{% endif %}
-{% assign disssec = dissloop.section %}
-{% for secondloop in site.dissertation %}
+{% for fileloop in site.narrative %}
+{% if fileloop.chapter == page.chapter %}
+{% if fileloop.subsection == "0" %}
+{% if fileloop.section != "0" %}
+<h4>Section: {{ fileloop.section}}: {{ fileloop.sectiontitle }}</h4>
+{% if fileloop.info != "nil" %}{{ fileloop.info }}<br><br>{% endif %}
+{% assign narrsec = fileloop.section %}
+{% for secondloop in site.narrative %}
 {% if secondloop.chapter == page.chapter %}
-{% if secondloop.section == disssec %}
+{% if secondloop.section == narrsec %}
 {% if secondloop.subsection != "0"%}
-{% if secondloop.subsection != "1" %} | {% endif %}<a href="{{ base.url }}/dissertation/{{ secondloop.chapter }}_{{ secondloop.section }}_{{ secondloop.subsection }}">{{ secondloop.chapter }}.{{ secondloop.section }}.{{ secondloop.subsection }}</a>
+{% if secondloop.subsection != "1" %} | {% endif %}<a href="{{ base.url }}/narrative/{{ secondloop.chapter }}_{{ secondloop.section }}_{{ secondloop.subsection }}">{{ secondloop.chapter }}.{{ secondloop.section }}.{{ secondloop.subsection }}</a>
 {% endif %}
 {% endif %}
 {% endif %}
