@@ -9,21 +9,19 @@ indexterms: ""
 
 ## Website and Design Credits 
 
-IDAH Community Archive Template Design: Kalani Craig
+If you need to provide a list of credits in bullet-point form, you can do so here by overwriting the credits for the OOPP:
 
-Template Revisions for the Opaque Online Publishing Platform: Kalani Craig & Sean Purcell
-
-Javascript Code and Functionality: Kalani Craig
-
-Graphic Site Design: Kalani Craig
-
-Additional Site Design Help: Jessica Organ
-
-Previous Javascript and Other Functions Design: Sagar Prabhu
-
-Data Entry Assistance: Xavier Daniels & Lauren Sweany
+- DigitalArc Template Design: Kalani Craig & Sean Purcell
+- Template Revisions of DigitalArc for the Opaque Online Publishing Platform: Kalani Craig & Sean Purcell
+- Javascript Code and Functionality: Kalani Craig
+- Graphic Site Design: Kalani Craig
+- Additional Site Design Help: Jessica Organ
+- Previous Javascript and Other Functions Design: Sagar Prabhu
+- Data Entry Assistance: Xavier Daniels & Lauren Sweany
 
 ## Acknowledgements
+
+Most publications also have an acknowledgements section that is prose. Here, we've left the [original acknowledgements section of Dr. Sean Purcell's dissertation](https://tuberculosisspecimen.github.io/diss/dissertation/acknowledgements), for which the OOPP was originally written.
 
 No dissertation is done in isolation. It is only possible with the help of a network of educators who guide and support the research, colleagues who function as sounding boards and supporters, friends who help weather the ups and downs of academic struggle, and family who stand as the bedrock of the whole process.
 

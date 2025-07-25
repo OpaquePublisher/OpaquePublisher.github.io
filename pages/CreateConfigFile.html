@@ -246,29 +246,17 @@ accentchoice: accent-darkred # Dark red
 # These collections take the basic files you put together for each item in your collection and auto-group and display them.
 # This takes each item in your archive collection and displays it
 collections:
+  narrative:
+    output: true
+    permalink: /:collection/:path:output_ext
+    chapter: true
+    identifier: true
   items:
     output: true
     permalink: /:collection/:path:output_ext
     contributor: true
     creator: true
     group: true
-  reception:
-    output: true
-    permalink: /:collection/:path:output_ext
-# If your collection items need to be grouped by person, family or some other group, uncomment this collection
-#  groups:
-#    output: true
-#    permalink: /:collection/:path:output_ext
-#    name: true
-#    folder: true
-#    sort_by: folder
-# If you have oral histories that go with groups, uncomment this collection:
-#  oralhistories:
-#    output: true
-#    permalink: /:collection/:path:output_ext
-#    name: true
-#    folder: true
-#    sort_by: folder
   authors:
     output: false
     name: true
