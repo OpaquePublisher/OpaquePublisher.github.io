@@ -35,6 +35,9 @@ Our team got its start at the [Institute for Digital Arts and Humanities](https:
 - Emily Clark
 - Morgan Vickery
 - Alec Smitten
+- Jessica Organ
+- Sagar Prabhu
+- Xavier Daniels
 
 ### About this Jekyll Theme
 The OOPP was forked from the [DigitalArc Platform](https://digitalarcplatform.github.io) community-archiving Jekyll theme.
